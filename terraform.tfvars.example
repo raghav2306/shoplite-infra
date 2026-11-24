@@ -1,0 +1,25 @@
+# Copy to terraform.tfvars (git-ignored) and adjust. Every value is optional.
+
+region             = "us-east-1"
+cluster_name       = "ecommerce"
+# A version past standard support costs 6x for the control plane (extended support)
+kubernetes_version = "1.37" # aws eks describe-cluster-versions --query 'clusterVersions[].[clusterVersion,versionStatus]'
+
+# Restrict kubectl access to your IP (curl -s https://checkip.amazonaws.com)
+# cluster_endpoint_public_access_cidrs = ["203.0.113.7/32"]
+
+# Nodes
+# node_instance_type = "t3.medium"
+# node_desired_size  = 3
+# node_min_size      = 2
+# node_max_size      = 4
+
+# CI: the repo whose GitHub Actions workflow may push to ECR
+# github_repo   = "raghav2306/shoplite-microservices"
+# github_branch = "main"
+# Set to false if the account already has a GitHub OIDC provider
+# create_github_oidc_provider = true
+
+# What Argo CD deploys
+# gitops_repo_url = "https://github.com/raghav2306/shoplite-gitops.git"
+# gitops_path     = "overlays/eks"
